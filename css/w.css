@@ -1,0 +1,276 @@
+
+/* ===== Reset ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: "Poppins", sans-serif;
+  background: #f4fff9; /* light green background */
+  color: #333;
+  line-height: 1.6;
+}
+
+/* ===== Navbar ===== */
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background: #006b4e;
+  padding: 15px 40px;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+}
+
+.logo {
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: #fff;
+}
+
+.nav-links {
+  list-style: none;
+  display: flex;
+  gap: 25px;
+}
+
+.nav-links a {
+  position: relative;
+  display: inline-block;
+  padding: 8px 14px;
+  color: #fff;
+  text-decoration: none;
+  font-weight: 500;
+  transition: color 0.3s ease;
+}
+
+/* Underline swipe + glow */
+.nav-links a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  width: 0%;
+  height: 3px;
+  background: #00ffcc;
+  transition: width 0.4s ease;
+}
+
+.nav-links a:hover {
+  color: #00ffcc;
+  text-shadow: 0 0 8px #00ffcc, 0 0 16px #00ffcc;
+}
+
+.nav-links a:hover::after {
+  width: 100%;
+}
+
+.nav-links a:active {
+  transform: scale(0.95) rotate(-1deg);
+  transition: transform 0.1s;
+}
+
+.nav-icons {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+.nav-icons input {
+  padding: 5px 10px;
+  border-radius: 20px;
+  border: none;
+  outline: none;
+}
+
+
+.hamburger {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+  gap: 5px;
+}
+
+.hamburger span {
+  width: 25px;
+  height: 3px;
+  background: white;
+  border-radius: 5px;
+}
+
+/* ===== Hero ===== */
+.hero {
+  height: 65vh;
+  background:
+    url("../images/anastase-maragos-FP7cfYPPUKM-unsplash.jpg") center/cover no-repeat;
+  position: relative;
+  display: flex; justify-content: center; align-items: center;
+  text-align: center; color: #fff;
+}
+.hero-overlay { position: absolute; inset: 0; background: rgba(0,0,0,.2); }
+.hero-content { position: relative; z-index: 1; max-width: 700px; }
+.hero-content h1 { font-size: 3rem; margin-bottom: 15px; text-shadow: 2px 2px 12px rgba(0,0,0,0.5); }
+.hero-content p { font-size: 1.3rem; margin-bottom: 20px; }
+.hero-btn {
+  display: inline-block;
+  padding: 12px 30px;
+  background: #00ffcc; color: #006b4e;
+  font-weight: bold; border-radius: 40px; text-decoration: none;
+}
+.hero-btn:hover { background: #fff; box-shadow: 0 8px 20px rgba(0,0,0,0.3); }
+
+/* ===== Top strip (Tip + Progress) ===== */
+.top-strip{
+  display:flex; gap:16px; align-items:center; justify-content:center;
+  padding: 18px 16px; background:#eafff7; border-top:1px solid #d7f6ec; border-bottom:1px solid #d7f6ec;
+}
+.tip-box, .progress-box{
+  background:#fff; border-radius:12px; padding:10px 14px; box-shadow:0 2px 8px rgba(0,0,0,.06);
+  display:flex; align-items:center; gap:10px; max-width:560px;
+}
+.tip-box .label{ font-weight:700; color:#006b4e; }
+.tip-text{ color:#2c5d4f; }
+.mini-btn{
+  padding:6px 10px; border:none; border-radius:8px; background:#00b894; color:#fff; cursor:pointer;
+}
+.mini-btn.ghost{
+  background:#2fa688; color:#2b4b42; border:1px solid #cfe7e1;
+}
+
+/* ===== Main ===== */
+.workout-section { padding: 40px 20px; }
+.container { max-width: 1000px; margin: auto; }
+.filters { display: flex; gap: 10px; margin-bottom: 20px; align-items: end; }
+.filters label { display: flex; flex-direction: column; font-size: .95rem; color: #555; }
+.filters select {
+  padding: 8px; border-radius: 8px; border: 1px solid #ccc; outline: none;
+}
+.primary {
+  padding: 10px 14px; border: none; border-radius: 10px;
+  background: #00b894; color: #fff; cursor: pointer;
+}
+
+/* Layout */
+.layout { display: grid; grid-template-columns: 1fr 2fr; gap: 20px; }
+
+/* Tips Sidebar */
+.tips {
+  background: #ffffff; padding: 15px; border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1);
+}
+.tips h3 { color: #006b4e; margin-bottom: 10px; }
+.tips ul {
+  list-style: none;
+  padding-left: 0;
+}
+
+/* Cards */
+.cards { display: grid; gap: 15px; }
+.card {
+  background: #fff; padding: 15px; border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,.1); text-align: center;
+  transition: transform 0.2s, box-shadow 0.2s;
+}
+.card:hover { transform: translateY(-5px); box-shadow: 0 6px 15px rgba(0,0,0,.15); }
+.card h3 { color: #006b4e; }
+.card p { color: #444; }
+
+/* Per-card circular timer */
+.ex-timer { position: relative; width: 100px; height: 100px; margin: 10px auto; }
+.ex-timer svg { transform: rotate(-90deg); }
+.ex-timer .bg { stroke: #eee; stroke-width: 8; fill: none; }
+.ex-timer .prog {
+  stroke: #00b894; stroke-width: 8; fill: none; stroke-linecap: round;
+  stroke-dasharray: 251.327; stroke-dashoffset: 251.327;
+  transition: stroke-dashoffset 1s linear, stroke .3s ease;
+}
+.ex-timer .time {
+  position: absolute; inset: 0; display: flex; align-items: center; justify-content: center;
+  font-weight: 700; color: #333;
+}
+.ex-controls { display: flex; gap: 6px; justify-content: center; flex-wrap: wrap; }
+.ex-controls select, .ex-controls button {
+  padding: 6px 9px; border-radius: 8px; border: 1px solid #ccc; background: #fff; cursor: pointer;
+}
+
+/* ===== Footer ===== */
+.footer {
+  background: #006b4e; color: #fff; padding: 30px 20px; text-align: center; margin-top: 50px;
+}
+.footer .newsletter { margin-bottom: 18px; }
+.footer input {
+  padding: 8px 15px; border-radius: 20px; border: none; outline: none; margin-right: 8px;
+}
+.footer button {
+  padding: 8px 15px; border-radius: 20px; border: none; background: #00b894; color:#fff; cursor:pointer;
+}
+.footer button:hover { background: #00ffcc; color: #333; }
+.footer-social { margin-top: 12px; }
+.footer-social i { margin: 0 8px; cursor: pointer; }
+.footer-social i:hover { color: #00ffcc; }
+
+/* Small screens */
+@media (max-width: 860px){
+  .layout { grid-template-columns: 1fr; }
+  .top-strip { flex-direction: column; align-items: stretch; }
+}
+
+
+/* 🔹 Mobile Responsive */
+@media (max-width: 768px) {
+  /* Navbar */
+  .nav-links {
+    position: absolute;
+    top: 60px;
+    right: 0;
+    background: #006b4e;
+    flex-direction: column;
+    width: 200px;
+    display: none;
+    padding: 1rem;
+  }
+
+  .nav-links.show {
+    display: flex;
+  }
+
+  .nav-icons {
+    display: none;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  /* Hero */
+  .hero h1 {
+    font-size: 1.6rem;
+  }
+
+  /* Calculator Section */
+  .calc-section {
+    flex-direction: column;
+    align-items: center;
+    padding: 1rem;
+  }
+
+  .calc-text {
+    width: 100%;
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+
+  .calc-card {
+    width: 100%;
+    max-width: 350px;
+  }
+
+  .calc-card input,
+  .calc-card select,
+  .calc-card button {
+    width: 100%;
+  }
+}
