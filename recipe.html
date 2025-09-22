@@ -23,12 +23,12 @@
     
     <nav>
       <ul class="nav-links">
-        <li><a href="home.html">Home</a></li>
-        <li><a href="recipe.html" class="active">Recipes</a></li>
-        <li><a href="calculator.html">Calculator</a></li>
-        <li><a href="workout.html">Workouts</a></li>
-        <li><a href="minfull.html">Mindfulness</a></li>
-        <li><a href="contact.html">Contact</a></li>
+        <li><a href="./index.html">Home</a></li>
+        <li><a href="./recipe.html" class="active">Recipes</a></li>
+        <li><a href="./calculator.html">Calculator</a></li>
+        <li><a href="./workout.html">Workouts</a></li>
+        <li><a href="./minfull.html">Mindfulness</a></li>
+        <li><a href="./contact.html">Contact</a></li>
       </ul>
     </nav>
     <div class="nav-icons">
@@ -72,7 +72,7 @@
     </div>
 
     <div class="recipe-card" onclick="openModal('oatmealModal')">
-      <img src="images/susan-wilkinson-ns-lpIwFUsk-unsplash.jpg" alt="Morning Oatmeal Bowl">
+      <img src="images/oatmeal.jpg" alt="Morning Oatmeal Bowl">
       <div class="recipe-info">
         <h3>Morning Oatmeal Bowl</h3>
         <p>Breakfast • Fiber Rich • Vegetarian</p>
@@ -81,7 +81,7 @@
     </div>
 
     <div class="recipe-card" onclick="openModal('stirfryModal')">
-      <img src="images/simona-sergi-QXzUcPen7QM-unsplash.jpg" alt="Veggie Stir Fry">
+      <img src="images/simona-sergi-QXzUcPen7QM-unsplashc2.jpg" alt="Veggie Stir Fry">
       <div class="recipe-info">
         <h3>Veggie Stir Fry</h3>
         <p>Dinner • Low Calorie • Vegan</p>
@@ -90,7 +90,7 @@
     </div>
 
     <div class="recipe-card" onclick="openModal('avocadoModal')">
-      <img src="images/israel-palacio-gJvUeWdVa5M-unsplash.jpg" alt="Avocado Toast">
+      <img src="images/Worlds-Best-Vegetarian-Omelette-Quick-and-Easy.jpg" alt="Avocado Toast">
       <div class="recipe-info">
         <h3>Avocado Toast</h3>
         <p>Breakfast • Quick • Healthy Fats</p>
@@ -135,7 +135,7 @@
     </div>
 
     <div class="recipe-card" onclick="openModal('pastaModal')">
-      <img src="images/photo-1644921504851-b8861be402ac.avif" alt="Whole Wheat Pasta">
+      <img src="images/mediterranean-chicken-wrap-2-1.jpg" alt="Whole Wheat Pasta">
       <div class="recipe-info">
         <h3>Whole Wheat Pasta</h3>
         <p>Dinner • Vegetarian • Energy Boost</p>
@@ -220,33 +220,6 @@
       <div class="recipe-info">
         <h3>Tomato Soup</h3>
         <p>Lunch • Vegan • Comfort Food</p>
-        <button class="view-btn">View Recipe</button>
-      </div>
-    </div>
-
-    <div class="recipe-card" onclick="openModal('hummusModal')">
-      <img src="images/hummus.jpg" alt="Classic Hummus">
-      <div class="recipe-info">
-        <h3>Classic Hummus</h3>
-        <p>Snack • Vegan • Protein Rich</p>
-        <button class="view-btn">View Recipe</button>
-      </div>
-    </div>
-
-    <div class="recipe-card" onclick="openModal('omeletteModal')">
-      <img src="images/Worlds-Best-Vegetarian-Omelette-Quick-and-Easy.jpg" alt="Veggie Omelette">
-      <div class="recipe-info">
-        <h3>Veggie Omelette</h3>
-        <p>Breakfast • High Protein • Quick</p>
-        <button class="view-btn">View Recipe</button>
-      </div>
-    </div>
-
-    <div class="recipe-card" onclick="openModal('fruitSaladModal')">
-      <img src="images/4518422-8b9bac307f7a4d7fb4379b8c647b806d.jpg" alt="Fruit Salad">
-      <div class="recipe-info">
-        <h3>Fruit Salad</h3>
-        <p>Snack • Vegan • Refreshing</p>
         <button class="view-btn">View Recipe</button>
       </div>
     </div>
@@ -738,84 +711,11 @@
   </div>
 </div>
 
-<!-- Classic Hummus -->
-<div id="hummusModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('hummusModal')">&times;</span>
-    <img src="images/hummus.jpg" alt="Classic Hummus">
-    <h2>Classic Hummus</h2>
-    <h3>Ingredients</h3>
-    <ul>
-      <li>1 can chickpeas</li>
-      <li>2 tbsp tahini</li>
-      <li>1 garlic clove</li>
-      <li>2 tbsp olive oil</li>
-      <li>1 tbsp lemon juice</li>
-    </ul>
-    <h3>Steps</h3>
-    <ol>
-      <li>Blend chickpeas, tahini, garlic, lemon juice and olive oil until smooth.</li>
-      <li>Adjust seasoning and serve with pita or veggies.</li>
-    </ol>
-    <h3>Nutrition Info</h3>
-    <table>
-      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
-      <tr><td>200</td><td>7g</td><td>10g</td><td>18g</td></tr>
-    </table>
-  </div>
-</div>
 
-<!-- Veggie Omelette -->
-<div id="omeletteModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('omeletteModal')">&times;</span>
-    <img src="images/veggie-omelette.jpg" alt="Veggie Omelette">
-    <h2>Veggie Omelette</h2>
-    <h3>Ingredients</h3>
-    <ul>
-      <li>2 eggs</li>
-      <li>Spinach, tomato, mushrooms (chopped)</li>
-      <li>Salt & pepper</li>
-    </ul>
-    <h3>Steps</h3>
-    <ol>
-      <li>Whisk eggs, season with salt and pepper.</li>
-      <li>Sauté veggies, pour eggs over and cook until set.</li>
-      <li>Fold and serve hot.</li>
-    </ol>
-    <h3>Nutrition Info</h3>
-    <table>
-      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
-      <tr><td>220</td><td>16g</td><td>14g</td><td>4g</td></tr>
-    </table>
-  </div>
-</div>
 
-<!-- Fresh Fruit Salad -->
-<div id="fruitSaladModal" class="modal">
-  <div class="modal-content">
-    <span class="close" onclick="closeModal('fruitSaladModal')">&times;</span>
-    <img src="images/fruit-salad.jpg" alt="Fruit Salad">
-    <h2>Fresh Fruit Salad</h2>
-    <h3>Ingredients</h3>
-    <ul>
-      <li>Assorted seasonal fruits (melon, berries, apple, mango)</li>
-      <li>Juice of 1 lime</li>
-      <li>Fresh mint leaves</li>
-    </ul>
-    <h3>Steps</h3>
-    <ol>
-      <li>Chop fruits into bite-sized pieces.</li>
-      <li>Toss with lime juice and chopped mint.</li>
-      <li>Chill briefly and serve.</li>
-    </ol>
-    <h3>Nutrition Info</h3>
-    <table>
-      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
-      <tr><td>140</td><td>2g</td><td>1g</td><td>35g</td></tr>
-    </table>
-  </div>
-</div>
+
+
+
 
 
 
