@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenBite | Mindfulness</title>
+
+  <link rel="stylesheet" href="css/mindfull.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+
+  <header class="navbar">
+    <div class="logo">🍃 GreenBite</div>
+    
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="recipe.html">Recipes</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="workout.html">Workouts</a></li>
+        <li><a href="minfull.html" class="active">Mindfulness</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <input type="text" placeholder="Search healthy recipes...">
+      <i class="fa-regular fa-user" style="color:#fff"></i>
+    </div>
+  </header>
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>🧘 Cultivate Inner Peace</h1>
+      <p>Simple tools to breathe, focus, and reset.</p>
+      <a href="#tools" class="hero-btn">Start Now</a>
+    </div>
+  </section>
+
+
+  <section class="mind-section" id="tools">
+    <div class="container grid">
+
+
+      <div class="card breathing">
+        <div class="card-head">Guided Breathing</div>
+        <div class="breath-area">
+          <div class="breath-circle" id="breathCircle"></div>
+          <div class="breath-text" id="breathText">Breathe In</div>
+        </div>
+        <div class="breath-controls">
+          <label>Pattern:
+            <select id="breathPreset">
+              <option value="4-4-4">Box (4-4-4)</option>
+              <option value="4-7-8">4-7-8</option>
+              <option value="5-5-5" selected>Balanced (5-5-5)</option>
+            </select>
+          </label>
+          <button id="breathStart" class="primary">Start</button>
+          <button id="breathStop" class="ghost">Stop</button>
+        </div>
+      </div>
+
+      
+      <div class="stack">
+        <div class="card timer">
+          <div class="card-head">⏳ Meditation Timer</div>
+          <div class="time" id="medDisplay">10:00</div>
+          <div class="controls">
+            <button id="medStart" class="primary">Start</button>
+            <button id="medPause" class="ghost">Pause</button>
+            <button id="medReset" class="ghost">Reset</button>
+            <select id="medSelect" title="Minutes">
+              <option value="5">5 min</option>
+              <option value="10" selected>10 min</option>
+              <option value="15">15 min</option>
+              <option value="20">20 min</option>
+            </select>
+          </div>
+        </div>
+
+        <div class="card timer">
+          <div class="card-head">⏰ Pomodoro Timer</div>
+          <div class="time" id="pomoDisplay">25:00</div>
+          <div class="controls">
+            <button id="pomoStart" class="primary">Start</button>
+            <button id="pomoPause" class="ghost">Pause</button>
+            <button id="pomoReset" class="ghost">Reset</button>
+            <select id="pomoSelect" title="Minutes">
+              <option value="20">20 min</option>
+              <option value="25" selected>25 min</option>
+              <option value="30">30 min</option>
+            </select>
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="wide card">
+        <div class="card-head center">🎧 Ambient Sounds</div>
+        <div class="sound-row">
+          <button class="chip" data-sound="rain">🌧️ Rain</button>
+          <button class="chip" data-sound="forest">🌲 Forest</button>
+          <button class="chip" data-sound="ocean">🌊 Ocean</button>
+        </div>
+        <p class="muted center">Tip: click a sound to play, click again to stop.</p>
+      </div>
+
+    
+      <div class="wide card">
+        <div class="card-head center">✅ Session Tracker</div>
+        <div class="tracker">
+          <div class="count">Completed Sessions: <strong id="sessCount">0</strong></div>
+          <button id="markSession" class="mini primary">+ Add Session</button>
+          <button id="resetSessions" class="mini ghost">Reset</button>
+        </div>
+        <ul id="sessLog" class="sess-log"></ul>
+        <p class="muted">Sessions save automatically in your browser (localStorage).</p>
+      </div>
+
+    </div>
+  </section>
+
+    
+  <footer class="footer">
+    <div class="newsletter">
+      <h3>Subscribe to our Newsletter</h3>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="newsletter-msg"></p>
+    </div>
+
+    <div class="footer-social">
+      <p>Made with 💚 by <a href="#">Sachin</a></p>
+      <div class="social-icons">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+  </footer>
+
+
+  <script src="js/mindfull.js"></script>
+  <script src="js/navi.js" defer></script>
+</body>
+</html>

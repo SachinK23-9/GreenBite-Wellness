@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenBite | Workout Generator</title>
+
+ 
+  <link rel="stylesheet" href="css/w.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+
+  <header class="navbar">
+    <div class="logo">🍃 GreenBite</div>
+
+      <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <nav>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="recipe.html">Recipes</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="workout.html" class="active">Workouts</a></li>
+        <li><a href="minfull.html">Mindfulness</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <input type="text" id="searchInput" placeholder="Search healthy recipes...">
+      <i class="fa-regular fa-user" style="color:#fff"></i>
+    </div>
+  </header>
+
+  
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>💪 Workout Generator</h1>
+      <p>Fun, fast, and effective workout plans</p>
+      <a href="#generator" id="heroGenerateBtn" class="hero-btn">Generate Workout</a>
+    </div>
+  </section>
+
+  
+  <section class="top-strip">
+    <div class="tip-box">
+      <span class="label">💡 Tip of the Day</span>
+      <span id="dailyTip" class="tip-text">Stay hydrated and warm up!</span>
+    </div>
+    <div class="progress-box">
+      <span>Completed Workouts: <strong id="workoutCount">0</strong></span>
+      <button id="markComplete" class="mini-btn">✅ Mark as Completed</button>
+      <button id="resetCount" class="mini-btn ghost" title="Reset counter">↩︎ Reset</button>
+    </div>
+  </section>
+
+
+  <section class="workout-section" id="generator">
+    <div class="container">
+      <div class="filters">
+        <label>
+          Equipment
+          <select id="equipment">
+            <option value="dumbbells">Dumbbells</option>
+            <option value="bands">Resistance Bands</option>
+          </select>
+        </label>
+        <button id="generateBtn" class="primary">🎲 Generate</button>
+      </div>
+
+      <div class="layout">
+       
+        <aside class="tips">
+          <h3>⚡ Quick Tips</h3>
+          <ul>
+            <li>🔥 Warm up for 5–10 minutes before workouts.</li>
+            <li>💧 Stay hydrated throughout training.</li>
+            <li>🏋️ Focus on proper form, not just heavy weights.</li>
+            <li>🛌 Rest & recover — muscles grow while resting.</li>
+            <li>🥗 Fuel your body with balanced meals.</li>
+            <li>📈 Track your progress weekly to stay motivated.</li>
+            <li>🎶 Play music to boost your energy and mood.</li>
+            <li>🤸 Stretch after workouts to prevent soreness.</li>
+            <li>⏱️ Consistency matters more than intensity.</li>
+            <li>✅ Listen to your body and avoid overtraining.</li>
+          </ul>
+        </aside>
+
+       
+        <div id="workoutCards" class="cards"></div>
+      </div>
+    </div>
+  </section>
+
+  
+
+  <footer class="footer">
+    <div class="newsletter">
+      <h3>Subscribe to our Newsletter</h3>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="newsletter-msg"></p>
+    </div>
+
+    <div class="footer-social">
+      <p>Made with 💚 by <a href="#">Sachin</a></p>
+      <div class="social-icons">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+  </footer>
+
+  
+  <script src="js/workout.js"></script>
+  <script src="js/navi.js" defer></script>
+  
+</body>
+</html>

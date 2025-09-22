@@ -1,0 +1,844 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenBite Recipes</title>
+  <link rel="stylesheet" href="css/recipe.css" />
+  <script defer src="js/recipe.js"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+  <!-- Navbar -->
+  <header class="navbar">
+    <div class="logo">🍃 GreenBite</div>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    
+    <nav>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="recipe.html" class="active">Recipes</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="workout.html">Workouts</a></li>
+        <li><a href="minfull.html">Mindfulness</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <input type="text" placeholder="Search healthy recipes..." />
+      <i class="fa-regular fa-user"></i>
+    </div>
+
+    
+  </header>
+
+  <!-- Hero Section -->
+  <section class="recipes-hero">
+    <h1>Discover Nutritious Recipes</h1>
+    <p>Find meals that fuel your body and mind 🍴</p>
+    <div class="search-bar">
+      <input type="text" id="searchInput" placeholder="Search recipes by title or ingredient...">
+      <select id="categoryFilter">
+        <option value="all">All Categories</option>
+        <option value="breakfast">Breakfast</option>
+        <option value="lunch">Lunch</option>
+        <option value="dinner">Dinner</option>
+        <option value="vegan">Vegan</option>
+        <option value="vegetarian">Vegetarian</option>
+        <option value="high protein">High Protein</option>
+      </select>
+      <button onclick="filterRecipes()"><i class="fa fa-search"></i></button>
+    </div>
+  </section>
+
+  <!-- Recipes Section -->
+  <section class="recipes-section">
+
+    <!-- Recipe Cards -->
+    <div class="recipe-card" onclick="openModal('quinoaModal')">
+      <img src="images/Salad-FB.webp" alt="Vibrant Quinoa Salad">
+      <div class="recipe-info">
+        <h3>Vibrant Quinoa Salad</h3>
+        <p>High Protein • Vegetarian • Lunch</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('oatmealModal')">
+      <img src="images/susan-wilkinson-ns-lpIwFUsk-unsplash.jpg" alt="Morning Oatmeal Bowl">
+      <div class="recipe-info">
+        <h3>Morning Oatmeal Bowl</h3>
+        <p>Breakfast • Fiber Rich • Vegetarian</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('stirfryModal')">
+      <img src="images/simona-sergi-QXzUcPen7QM-unsplash.jpg" alt="Veggie Stir Fry">
+      <div class="recipe-info">
+        <h3>Veggie Stir Fry</h3>
+        <p>Dinner • Low Calorie • Vegan</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('avocadoModal')">
+      <img src="images/israel-palacio-gJvUeWdVa5M-unsplash.jpg" alt="Avocado Toast">
+      <div class="recipe-info">
+        <h3>Avocado Toast</h3>
+        <p>Breakfast • Quick • Healthy Fats</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('smoothieModal')">
+      <img src="images/denis-hsTwPUzFegQ-unsplash.jpg" alt="Berry Smoothie">
+      <div class="recipe-info">
+        <h3>Berry Smoothie</h3>
+        <p>Breakfast • Refreshing • Antioxidants</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('curryModal')">
+      <img src="images/premium_photo-1695456064603-aa7568121827.avif" alt="Chickpea Curry">
+      <div class="recipe-info">
+        <h3>Chickpea Curry</h3>
+        <p>Dinner • Protein Rich • Vegan</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('wrapModal')">
+      <img src="images/mediterranean-chicken-wrap-2-1.jpg" alt="Mediterranean Wrap">
+      <div class="recipe-info">
+        <h3>Mediterranean Wrap</h3>
+        <p>Lunch • High Protein • Vegetarian</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('soupModal')">
+      <img src="images/stephanie-monfette-SlqbDPH6Bic-unsplash.jpg" alt="Lentil Soup">
+      <div class="recipe-info">
+        <h3>Lentil Soup</h3>
+        <p>Dinner • Vegan • High Protein</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('pastaModal')">
+      <img src="images/photo-1644921504851-b8861be402ac.avif" alt="Whole Wheat Pasta">
+      <div class="recipe-info">
+        <h3>Whole Wheat Pasta</h3>
+        <p>Dinner • Vegetarian • Energy Boost</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('buddhaModal')">
+      <img src="images/photo-1111-9fde458e7e17.avif" alt="Buddha Bowl">
+      <div class="recipe-info">
+        <h3>Buddha Bowl</h3>
+        <p>Lunch • Vegan • Balanced Meal</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('grilledModal')">
+      <img src="images/grilled-vegetables.jpg" alt="Grilled Veggie Plate">
+      <div class="recipe-info">
+        <h3>Grilled Veggie Plate</h3>
+        <p>Dinner • Vegan • Fiber Rich</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('pancakeModal')">
+      <img src="images/simply-recipes-2-ingredient-banana-pancakes-lead-02-8aba4db87a0b40a593fe6ba8d5ad022f.jpg" alt="Banana Pancakes">
+      <div class="recipe-info">
+        <h3>Banana Pancakes</h3>
+        <p>Breakfast • Vegetarian • Sweet</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('sushiModal')">
+      <img src="images/FV-Insta-8.jpg" alt="Vegan Sushi">
+      <div class="recipe-info">
+        <h3>Vegan Sushi</h3>
+        <p>Lunch • Vegan • Low Fat</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('chiliModal')">
+      <img src="images/mar20_5-veggie-and-3-bean-chilli-158613-1.jpg" alt="Bean Chili">
+      <div class="recipe-info">
+        <h3>Bean Chili</h3>
+        <p>Dinner • Vegan • Spicy</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('tofuModal')">
+      <img src="images/Asian-garlic-tofu-2.webp" alt="Tofu Stir Fry">
+      <div class="recipe-info">
+        <h3>Tofu Stir Fry</h3>
+        <p>Dinner • Vegan • Protein Rich</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('salmonModal')">
+      <img src="images/20230915-WEB-SEO-0905.webp" alt="Salmon Bowl">
+      <div class="recipe-info">
+        <h3>Salmon Bowl</h3>
+        <p>Lunch • High Protein • Omega-3</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('smoothieGreenModal')">
+      <img src="images/fraiche-living-tropical-green-smoothie.jpg" alt="Green Smoothie">
+      <div class="recipe-info">
+        <h3>Green Smoothie</h3>
+        <p>Breakfast • Vegan • Detox</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('soupTomatoModal')">
+      <img src="images/277311spicy-fresh-tomato-soupFranceC4x3-56454ad082214f33960f62665fc8c169.jpg" alt="Tomato Soup">
+      <div class="recipe-info">
+        <h3>Tomato Soup</h3>
+        <p>Lunch • Vegan • Comfort Food</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('hummusModal')">
+      <img src="images/hummus.jpg" alt="Classic Hummus">
+      <div class="recipe-info">
+        <h3>Classic Hummus</h3>
+        <p>Snack • Vegan • Protein Rich</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('omeletteModal')">
+      <img src="images/Worlds-Best-Vegetarian-Omelette-Quick-and-Easy.jpg" alt="Veggie Omelette">
+      <div class="recipe-info">
+        <h3>Veggie Omelette</h3>
+        <p>Breakfast • High Protein • Quick</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+    <div class="recipe-card" onclick="openModal('fruitSaladModal')">
+      <img src="images/4518422-8b9bac307f7a4d7fb4379b8c647b806d.jpg" alt="Fruit Salad">
+      <div class="recipe-info">
+        <h3>Fruit Salad</h3>
+        <p>Snack • Vegan • Refreshing</p>
+        <button class="view-btn">View Recipe</button>
+      </div>
+    </div>
+
+  </section>
+
+  <!-- Vibrant Quinoa Salad -->
+<div id="quinoaModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('quinoaModal')">&times;</span>
+    <img src="images/Salad-FB.webp" alt="Vibrant Quinoa Salad">
+    <h2>Vibrant Quinoa Salad</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1 cup cooked quinoa</li>
+      <li>1 cucumber, diced</li>
+      <li>1 tomato, chopped</li>
+      <li>1/4 cup tahini dressing</li>
+      <li>Fresh parsley</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Cook quinoa according to package instructions and let cool.</li>
+      <li>Chop all vegetables and parsley.</li>
+      <li>Mix quinoa, veggies, and parsley in a bowl.</li>
+      <li>Drizzle tahini dressing, toss, and serve.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>350</td><td>12g</td><td>10g</td><td>50g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Morning Oatmeal Bowl -->
+<div id="oatmealModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('oatmealModal')">&times;</span>
+    <img src="images/oatmeal.jpg" alt="Morning Oatmeal Bowl">
+    <h2>Morning Oatmeal Bowl</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1/2 cup rolled oats</li>
+      <li>1 cup milk or almond milk</li>
+      <li>Fresh fruits (banana, berries)</li>
+      <li>1 tbsp honey</li>
+      <li>Chopped nuts</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Cook oats in milk until soft.</li>
+      <li>Top with fruits, nuts, and honey.</li>
+      <li>Serve warm.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>280</td><td>8g</td><td>6g</td><td>50g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Veggie Stir Fry -->
+<div id="stirfryModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('stirfryModal')">&times;</span>
+    <img src="images/stirfry.jpg" alt="Veggie Stir Fry">
+    <h2>Veggie Stir Fry</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>2 cups mixed vegetables (bell pepper, broccoli, carrot)</li>
+      <li>2 tbsp soy sauce</li>
+      <li>1 tbsp olive oil</li>
+      <li>1 garlic clove, minced</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Heat oil in a pan and sauté garlic briefly.</li>
+      <li>Add mixed vegetables and stir-fry until tender-crisp.</li>
+      <li>Add soy sauce, toss, and serve hot.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>220</td><td>6g</td><td>8g</td><td>30g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Avocado Toast -->
+<div id="avocadoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('avocadoModal')">&times;</span>
+    <img src="images/avocado-toast.jpg" alt="Avocado Toast">
+    <h2>Avocado Toast</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>2 slices whole grain bread</li>
+      <li>1 ripe avocado</li>
+      <li>1 tsp lemon juice</li>
+      <li>Chili flakes and salt to taste</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Toast the bread.</li>
+      <li>Mash avocado with lemon juice, salt, and chili flakes.</li>
+      <li>Spread on toast and serve immediately.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>300</td><td>7g</td><td>15g</td><td>35g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Berry Smoothie -->
+<div id="smoothieModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('smoothieModal')">&times;</span>
+    <img src="images/smoothie.jpg" alt="Berry Smoothie">
+    <h2>Berry Smoothie</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1 cup mixed berries</li>
+      <li>1 cup almond milk</li>
+      <li>1 banana</li>
+      <li>1 tbsp honey (optional)</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Add all ingredients to a blender.</li>
+      <li>Blend until smooth and creamy.</li>
+      <li>Pour into a glass and enjoy.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>250</td><td>4g</td><td>3g</td><td>55g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Chickpea Curry -->
+<div id="curryModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('curryModal')">&times;</span>
+    <img src="images/chickpea-curry.jpg" alt="Chickpea Curry">
+    <h2>Chickpea Curry</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>2 cups cooked chickpeas</li>
+      <li>1 onion, chopped</li>
+      <li>2 tomatoes, chopped</li>
+      <li>2 tbsp curry powder</li>
+      <li>1 tbsp olive oil</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Sauté onion in oil until soft.</li>
+      <li>Add tomatoes and curry powder; cook 5 mins.</li>
+      <li>Add chickpeas and simmer 15 mins. Serve with rice.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>400</td><td>14g</td><td>12g</td><td>60g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Mediterranean Wrap -->
+<div id="wrapModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('wrapModal')">&times;</span>
+    <img src="images/wrap.jpg" alt="Mediterranean Wrap">
+    <h2>Mediterranean Wrap</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1 whole wheat tortilla</li>
+      <li>Hummus</li>
+      <li>Cucumber, tomato, red onion, lettuce</li>
+      <li>Feta (optional)</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Spread hummus on tortilla.</li>
+      <li>Layer veggies and feta.</li>
+      <li>Roll tightly and slice in half.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>320</td><td>12g</td><td>10g</td><td>40g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Lentil Soup -->
+<div id="soupModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('soupModal')">&times;</span>
+    <img src="images/lentil-soup.jpg" alt="Lentil Soup">
+    <h2>Lentil Soup</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1 cup lentils</li>
+      <li>1 carrot, diced</li>
+      <li>1 onion, chopped</li>
+      <li>1 can diced tomatoes</li>
+      <li>Vegetable broth and spices</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Sauté onion and carrot until soft.</li>
+      <li>Add lentils, tomatoes and broth; simmer until lentils tender.</li>
+      <li>Season and serve hot.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>320</td><td>18g</td><td>4g</td><td>50g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Whole Wheat Pasta Primavera -->
+<div id="pastaModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('pastaModal')">&times;</span>
+    <img src="images/pasta.jpg" alt="Whole Wheat Pasta">
+    <h2>Whole Wheat Pasta Primavera</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>200g whole wheat pasta</li>
+      <li>Zucchini, bell peppers, cherry tomatoes</li>
+      <li>Olive oil, garlic, basil</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Cook pasta until al dente.</li>
+      <li>Sauté veggies in olive oil and garlic.</li>
+      <li>Toss pasta with veggies and basil; serve.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>420</td><td>14g</td><td>12g</td><td>65g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Buddha Bowl -->
+<div id="buddhaModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('buddhaModal')">&times;</span>
+    <img src="images/buddha-bowl.jpg" alt="Buddha Bowl">
+    <h2>Buddha Bowl</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>Quinoa or brown rice</li>
+      <li>Roasted sweet potato</li>
+      <li>Chickpeas, avocado, greens</li>
+      <li>Tahini or lemon dressing</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Cook base (quinoa/rice).</li>
+      <li>Roast sweet potato and season chickpeas.</li>
+      <li>Arrange everything in a bowl and drizzle dressing.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>460</td><td>16g</td><td>18g</td><td>55g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Grilled Veggie Plate -->
+<div id="grilledModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('grilledModal')">&times;</span>
+    <img src="images/grilled-veggies.jpg" alt="Grilled Veggie Plate">
+    <h2>Grilled Veggie Plate</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>Assorted vegetables (eggplant, zucchini, peppers)</li>
+      <li>Olive oil, salt, pepper, herbs</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Slice veggies, toss with oil and seasoning.</li>
+      <li>Grill until tender and slightly charred.</li>
+      <li>Serve warm with a squeeze of lemon.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>280</td><td>6g</td><td>12g</td><td>36g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Banana Pancakes -->
+<div id="pancakeModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('pancakeModal')">&times;</span>
+    <img src="images/banana-pancakes.jpg" alt="Banana Pancakes">
+    <h2>Banana Pancakes</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1 ripe banana</li>
+      <li>1 egg</li>
+      <li>1/2 cup oats (blended)</li>
+      <li>1/2 tsp baking powder (optional)</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Blend banana, egg, oats and baking powder into batter.</li>
+      <li>Cook small pancakes on a non-stick pan until golden.</li>
+      <li>Serve with fresh fruit or a drizzle of honey.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>320</td><td>8g</td><td>7g</td><td>55g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Vegan Sushi -->
+<div id="sushiModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('sushiModal')">&times;</span>
+    <img src="images/vegan-sushi.jpg" alt="Vegan Sushi">
+    <h2>Vegan Sushi</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>Sushi rice</li>
+      <li>Nori sheets</li>
+      <li>Cucumber, avocado, carrot strips</li>
+      <li>Soy sauce for serving</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Cook sushi rice and season with rice vinegar.</li>
+      <li>Place rice on nori, add fillings and roll tightly.</li>
+      <li>Slice rolls and serve with soy sauce.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>260</td><td>6g</td><td>4g</td><td>50g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Bean Chili -->
+<div id="chiliModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('chiliModal')">&times;</span>
+    <img src="images/bean-chili.jpg" alt="Bean Chili">
+    <h2>Bean Chili</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>Assorted beans (kidney, black, pinto)</li>
+      <li>Onion, bell pepper, garlic</li>
+      <li>Tomato sauce and chili powder</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Sauté onion and peppers, add garlic.</li>
+      <li>Add beans, tomato sauce, spices; simmer 20–30 mins.</li>
+      <li>Serve with cilantro and lime.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>380</td><td>18g</td><td>6g</td><td>58g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Tofu Stir Fry -->
+<div id="tofuModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('tofuModal')">&times;</span>
+    <img src="images/tofu-stirfry.jpg" alt="Tofu Stir Fry">
+    <h2>Tofu Stir Fry</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>200g firm tofu, cubed</li>
+      <li>Mixed vegetables</li>
+      <li>Soy sauce, garlic, ginger</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Pan-fry tofu until golden and set aside.</li>
+      <li>Stir-fry veggies with garlic and ginger.</li>
+      <li>Add tofu back with soy sauce and toss to coat.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>330</td><td>20g</td><td>14g</td><td>24g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Grilled Salmon Bowl -->
+<div id="salmonModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('salmonModal')">&times;</span>
+    <img src="images/salmon-bowl.jpg" alt="Salmon Bowl">
+    <h2>Grilled Salmon Bowl</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1 salmon fillet</li>
+      <li>1 cup brown rice</li>
+      <li>Steamed broccoli and avocado</li>
+      <li>Soy sauce or tahini drizzle</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Grill salmon with salt and pepper.</li>
+      <li>Cook rice and steam broccoli.</li>
+      <li>Assemble bowl: rice, salmon, avocado, broccoli; drizzle sauce.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>500</td><td>35g</td><td>18g</td><td>45g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Green Smoothie -->
+<div id="smoothieGreenModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('smoothieGreenModal')">&times;</span>
+    <img src="images/green-smoothie.jpg" alt="Green Smoothie">
+    <h2>Green Smoothie</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1 cup spinach</li>
+      <li>1 banana</li>
+      <li>1/2 avocado</li>
+      <li>1 cup coconut water</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Blend all ingredients until smooth.</li>
+      <li>Serve chilled.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>220</td><td>4g</td><td>9g</td><td>30g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Tomato Soup -->
+<div id="soupTomatoModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('soupTomatoModal')">&times;</span>
+    <img src="images/tomato-soup.jpg" alt="Tomato Soup">
+    <h2>Tomato Soup</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>4 ripe tomatoes</li>
+      <li>1 onion</li>
+      <li>2 cloves garlic</li>
+      <li>Vegetable stock</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Sauté onion and garlic.</li>
+      <li>Add chopped tomatoes and stock; simmer 20 mins.</li>
+      <li>Blend until smooth and season to taste.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>180</td><td>4g</td><td>6g</td><td>26g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Classic Hummus -->
+<div id="hummusModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('hummusModal')">&times;</span>
+    <img src="images/hummus.jpg" alt="Classic Hummus">
+    <h2>Classic Hummus</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>1 can chickpeas</li>
+      <li>2 tbsp tahini</li>
+      <li>1 garlic clove</li>
+      <li>2 tbsp olive oil</li>
+      <li>1 tbsp lemon juice</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Blend chickpeas, tahini, garlic, lemon juice and olive oil until smooth.</li>
+      <li>Adjust seasoning and serve with pita or veggies.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>200</td><td>7g</td><td>10g</td><td>18g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Veggie Omelette -->
+<div id="omeletteModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('omeletteModal')">&times;</span>
+    <img src="images/veggie-omelette.jpg" alt="Veggie Omelette">
+    <h2>Veggie Omelette</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>2 eggs</li>
+      <li>Spinach, tomato, mushrooms (chopped)</li>
+      <li>Salt & pepper</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Whisk eggs, season with salt and pepper.</li>
+      <li>Sauté veggies, pour eggs over and cook until set.</li>
+      <li>Fold and serve hot.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>220</td><td>16g</td><td>14g</td><td>4g</td></tr>
+    </table>
+  </div>
+</div>
+
+<!-- Fresh Fruit Salad -->
+<div id="fruitSaladModal" class="modal">
+  <div class="modal-content">
+    <span class="close" onclick="closeModal('fruitSaladModal')">&times;</span>
+    <img src="images/fruit-salad.jpg" alt="Fruit Salad">
+    <h2>Fresh Fruit Salad</h2>
+    <h3>Ingredients</h3>
+    <ul>
+      <li>Assorted seasonal fruits (melon, berries, apple, mango)</li>
+      <li>Juice of 1 lime</li>
+      <li>Fresh mint leaves</li>
+    </ul>
+    <h3>Steps</h3>
+    <ol>
+      <li>Chop fruits into bite-sized pieces.</li>
+      <li>Toss with lime juice and chopped mint.</li>
+      <li>Chill briefly and serve.</li>
+    </ol>
+    <h3>Nutrition Info</h3>
+    <table>
+      <tr><th>Calories</th><th>Protein</th><th>Fat</th><th>Carbs</th></tr>
+      <tr><td>140</td><td>2g</td><td>1g</td><td>35g</td></tr>
+    </table>
+  </div>
+</div>
+
+
+
+  <footer class="footer">
+    <div class="newsletter">
+      <h3>Subscribe to our Newsletter</h3>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="newsletter-msg"></p>
+    </div>
+
+    <div class="footer-social">
+      <p>Made with 💚 by <a href="#">Sachin</a></p>
+      <div class="social-icons">
+        <i class="fab fa-twitter"></i>
+        <i class="fab fa-instagram"></i>
+        <i class="fab fa-youtube"></i>
+        <i class="fab fa-linkedin"></i>
+      </div>
+    </div>
+  </footer>
+</body>
+</html>
+

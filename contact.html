@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GreenBite | Contact</title>
+
+  <link rel="stylesheet" href="css/contact.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"/>
+</head>
+<body>
+
+  <header class="navbar">
+    <div class="logo">🍃 GreenBite</div>
+
+    <div class="hamburger">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+    <nav>
+      <ul class="nav-links">
+        <li><a href="home.html">Home</a></li>
+        <li><a href="recipe.html">Recipes</a></li>
+        <li><a href="calculator.html">Calculator</a></li>
+        <li><a href="workout.html">Workouts</a></li>
+        <li><a href="minfull.html">Mindfulness</a></li>
+        <li><a href="contact.html" class="active">Contact</a></li>
+      </ul>
+    </nav>
+    <div class="nav-icons">
+      <input type="text" placeholder="Search healthy recipes...">
+      <i class="fa-regular fa-user" style="color:#fff"></i>
+    </div>
+  </header>
+
+
+  <section class="hero">
+    <div class="hero-overlay"></div>
+    <div class="hero-content">
+      <h1>Connect With Us</h1>
+      <p>Your feedback fuels our growth. Questions, suggestions, or just want to say hello? We’re here for you.</p>
+    </div>
+  </section>
+
+  <main class="page">
+    <div class="container">
+
+     
+      <section class="card contact-card">
+        <h2>Get in Touch</h2>
+        <p class="muted">We’ll respond as soon as possible.</p>
+
+        <form id="contactForm" novalidate>
+          <label>Your Name
+            <input type="text" id="name" placeholder="Full name" required />
+          </label>
+
+          <label>Your Email
+            <input type="email" id="email" placeholder="your.email@example.com" required />
+          </label>
+
+          <label>Your Message
+            <textarea id="message" rows="6" placeholder="Tell us what’s on your mind..." required></textarea>
+          </label>
+
+          <button type="submit" class="primary"><i class="fa-regular fa-paper-plane"></i> Send Message</button>
+          <p id="formMsg" class="form-msg" aria-live="polite"></p>
+        </form>
+      </section>
+
+      
+      <section class="card location-card">
+        <div class="loc-grid">
+          <div class="map">
+            
+            <img src="images/ChatGPT Image Sep 21, 2025, 08_35_00 AM.png" alt="Map to GreenBite HQ" />
+          </div>
+          <div class="loc-info">
+            <h3>Our Location</h3>
+            <p class="muted">Come visit us or reach us using the details below.</p>
+
+            <div class="info-row"><i class="fa-solid fa-location-dot"></i>
+              <span>
+                <strong>GreenBite HQ</strong><br/>
+                123 Wellness Way, Suite 456<br/>
+                Natureville, CA 90210, USA
+              </span>
+            </div>
+
+            <div class="info-row"><i class="fa-solid fa-phone"></i>
+              <a href="tel:+11234567890">(123) 456-7890</a>
+            </div>
+
+            <div class="info-row"><i class="fa-regular fa-envelope"></i>
+              <a href="mailto:info@greenbite.com">info@greenbite.com</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      
+      <section class="card faq-card">
+        <h3 class="center">Frequently Asked Questions</h3>
+        <div class="accordion" id="faq">
+          <details>
+            <summary>What kind of recipes does GreenBite offer?</summary>
+            <p>Balanced, easy-to-cook meals with nutrition highlights and swaps.</p>
+          </details>
+          <details>
+            <summary>How can I track my nutrition with GreenBite?</summary>
+            <p>Use the Calculator page to estimate calories/macros and plan meals.</p>
+          </details>
+          <details>
+            <summary>Are the workout plans customizable?</summary>
+            <p>Yes—use the equipment filters on the Workouts page and set timers per exercise.</p>
+          </details>
+          <details>
+            <summary>Does GreenBite offer mindfulness exercises?</summary>
+            <p>Absolutely. Try guided breathing, ambient sounds, and the meditation timer.</p>
+          </details>
+          <details>
+            <summary>How can I provide feedback or suggestions?</summary>
+            <p>Right here! Send us a message using the form above and we’ll get back to you.</p>
+          </details>
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+
+  <footer class="footer">
+    <div class="newsletter">
+      <h3>Subscribe to our Newsletter</h3>
+      <form id="newsletter-form">
+        <input type="email" id="newsletter-email" placeholder="Enter your email" required>
+        <button type="submit">Subscribe</button>
+      </form>
+      <p id="newsletter-msg"></p>
+    </div>
+ 
+  <footer class="footer">
+    <p>Made with 💚 by Sachin</p>
+    <div class="footer-social">
+      <i class="fab fa-twitter"></i>
+      <i class="fab fa-instagram"></i>
+      <i class="fab fa-youtube"></i>
+      <i class="fab fa-linkedin"></i>
+    </div>
+  </footer>
+
+  <div id="toast" class="toast" role="status" aria-live="polite"></div>
+
+  <script src="js/contact.js"></script>
+  <script src="js/navi.js" defer></script>
+</body>
+</html>
