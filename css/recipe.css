@@ -104,7 +104,7 @@ body {
 /* ===== Hero Section ===== */
 .recipes-hero {
   height: 40vh;
-  background: url("../images/2.jpg") center/cover no-repeat;
+  background: url("../images/Salad-FB.webp") center/cover no-repeat;
   display: flex;
   flex-direction: column;
   justify-content: center;
